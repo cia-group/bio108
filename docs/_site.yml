@@ -1,0 +1,12 @@
+name: "BIOL108"
+output_dir: "."
+navbar:
+  title: "Data science for conservation"
+  left:
+    - text: "Syllabus"
+      icon: fa-home
+      href: index.html
+output:
+  html_document:
+    theme: flatly
+    css: style.css

@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="" />
+
+<meta name="date" content="2025-01-19" />
+
+<title>Data science for conservation syllabus</title>
+
+<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Data science for conservation</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Syllabus
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Data science for conservation syllabus</h1>
+<h4 class="author"></h4>
+<h4 class="date">2025-01-19</h4>
+
+</div>
+
+
+<div id="overview" class="section level1">
+<h1>Overview</h1>
+<p>This course presents data science techniques for analyzing and
+deriving insights about biodiversity conservation. With 10-50% of
+species threatened by human activities, novel computational techniques
+can unlock new understanding of environmental challenges from digital
+data, encompassing websites, satellite data, or time series data. In
+this course, students will learn techniques such as geospatial analysis,
+natural language processing, and machine learning.</p>
+<p>Students will learn how to effectively collect, clean, and extract
+meaning from unstructured data. Prior programming and statistical
+analysis experience is strongly encouraged but not required. Through
+coding assignments and a capstone project, students will build
+proficiency using open source libraries to wrangle, analyze, visualize,
+and interpret conservation-related datasets. By the end of the course, a
+successful learner will have hands-on experience with data science
+methods, and will have insight on how to connect these with biodiversity
+and sustainability research, policy, planning, and advocacy.</p>
+<ul>
+<li><em>Data management, analysis, and visualization</em>: You will
+develop skills in data science using an open-source programming language
+(Python). I do not assume any prior experience with programming.
+However, I expect that students in this class will have an appetite to
+learn and to continuously self-improve.</li>
+<li><em>Reading</em>: You will relate the methodologies you are learning
+to new research in conservation science. You will also demonstrate
+understanding of how this research communicates new information in
+ecology and/or conservation.</li>
+<li><em>Communication and Presentation</em>: In this course, you will
+learn through individual work and small group conversations. You will
+also develop your communication and presentation skills through the
+creation of a coding tutorial. You will also enhance your communication
+skills through peer review of one another’s tutorials.</li>
+<li><em>Learning through teaching</em>: Teaching is one of the best ways
+to consolidate knowledge and to see gaps in one’s knowledge. Through
+course assignments, group conversations, and the capstone tutorial, you
+will learn by stepping into the role of a teacher.</li>
+</ul>
+<div id="learning-outcomes" class="section level2">
+<h2>Learning outcomes</h2>
+<p>By the end of the course, a successful learner will be able to:</p>
+<ol style="list-style-type: decimal">
+<li>ingest and process unstructured environmental data;</li>
+<li>identify how to use data science techniques to answer a scientific
+question;</li>
+<li>evaluate different strategies to derive insights from data to
+address contemporary conservation issues;</li>
+<li>discuss the use of data science in generating actionable information
+for conservation and demonstrate mastery of data science techniques
+through a live-coding workshop.</li>
+</ol>
+</div>
+<div id="general-information" class="section level2">
+<h2>General information</h2>
+<p><strong>Location</strong>: Seaver South Computer Lab (Room 227)</p>
+<p><strong>Schedule</strong>: Mondays and Wednesdays, 2:45-4pm</p>
+<p><strong>Office Hours</strong>: My regularly scheduled office hours
+will be <em>TBD</em> in my office (Seaver South 108).</p>
+<p><strong>Prerequisites</strong>: Bio 41E (Intro Ecol &amp;
+Evolutionary Bio w/Lab) or instructor permission</p>
+<p><strong>Readings</strong>: This course will use weekly notebook
+tutorials and will ask students to navigate to these <em>Society of
+Conservation Biology</em> journals to find new research (published
+within the last 5 years):</p>
+<ul>
+<li><em>Conservation Letters</em></li>
+<li><em>Conservation Biology</em></li>
+<li><em>Conservation Science and Practice</em></li>
+<li>If necessary, learners can expand to this non-society conservation
+journal: <em>Biological Conservation</em></li>
+<li>Students can also use these <em>Ecological Society of America</em>
+journals:
+<ul>
+<li><em>Ecology</em></li>
+<li><em>Ecological Applications</em></li>
+<li><em>Frontiers in Ecology and the Environment</em>
+(<strong>note</strong>: this is <em>not</em> the for-profit
+“<em>Frontiers In</em>” family)</li>
+</ul></li>
+</ul>
+<p><strong>AI policy</strong>: I expect that students will present their
+own original work in every assignment in this class. However, students
+may find generative AI to be helpful in deepening their understanding of
+some of the methods we will be exploring. I expect that if students use
+generative AI, they will <strong>always</strong>:</p>
+<ul>
+<li>Cite and attribute assistance from a generative AI model;
+<ul>
+<li>If students use generative AI without attribution, this will
+constitute plagiarism.</li>
+</ul></li>
+<li>Students will develop their own preliminary outline and draft code
+and will not unthinkingly copy AI-generated code;</li>
+<li>Students will only use generative AI to answer questions about:
+<ul>
+<li>Error, warning, or other messages (e.g. “Why is this command not
+working? What does this error message indicate?”);</li>
+<li>Commentary to clarify code or methods presented in the class
+(e.g. “What is this function doing? Please break it down step by step
+and add human-readable comments.”).</li>
+</ul></li>
+<li>Students <strong>must</strong> disable the generative AI suggestions
+in Google CoLab.</li>
+<li>I expect that students <strong>will not</strong> use generative AI
+to 1) write written responses or 2) write code.
+<ul>
+<li>To that end, the student-led workshops at the end of the semester
+will expect that you have mastery over approaches in the course and will
+be comfortable live-coding <em>without AI assistance</em>.</li>
+</ul></li>
+</ul>
+<p>In the longer term, generative AI is extremely expensive for these
+companies to run and has a substantial environmental and power demand
+footprint. It is also unclear if companies providing these services will
+be able to procure enough electricity to be able to meet all consumer
+demand for this service. <em>Therefore, relying on generative AI</em>
+puts you at the mercy of large companies that have no accountability to
+the public, and can harm your growth for near-term convenience that
+becomes a long-term liability when access to these tools disappears
+(e.g. companies decide they are a money pit and cut them as a
+service–see <a href="https://killedbygoogle.com/">Google Graveyard</a>
+for some examples) or is only accessible behind prohibitive paywalls
+(e.g. your organization must subscribe and pay 5-6 figures USD for some
+recurring subscription).</p>
+<p><strong>Digital ethics</strong>: One of the tools we will use from
+time to time in this course is Zoom. To facilitate access, I will
+typically record Zoom meetings. I will inform students when recordings
+are in progress. I expect that students in my class will respect one
+another and my privacy. To that end, students will not record any other
+member of the class–including the instructor–without obtaining their
+consent in advance. Students will also not share information about other
+members of this course in any type of public fora, such as social media.
+As the instructor, I own the copyright to my instructional materials.
+These materials cannot be distributed in whole or in part to any person
+or entity other than other members of the current class without my prior
+written consent.</p>
+</div>
+<div id="course-assessment" class="section level2">
+<h2>Course assessment</h2>
+<ul>
+<li>Weekly homework assignments: 100 points</li>
+<li>Workshop draft: 50 points</li>
+<li>Peer review of the workshop tutorial: 25 points</li>
+<li>Final workshop: 100 points</li>
+<li>Participation: 150 points</li>
+</ul>
+<p>Participation is highly important for student success in this course.
+To that end, I reserve the option to assign a failing grade if students
+have <em>three</em> or more unexcused absences. Students can have
+<em>two</em> absences excused with no questions.</p>
+</div>
+<div id="mutual-expectations" class="section level2">
+<h2>Mutual expectations</h2>
+<div id="what-i-expect-from-you" class="section level3">
+<h3>What I expect from you</h3>
+<p>I welcome individuals of all ages, backgrounds, beliefs, ethnicities,
+genders, gender identities, gender expressions, national origins,
+religious affiliations, sexual orientations, ability - and other visible
+and non-visible differences. As an instructor, I strongly emphasize
+student agency; this class is <strong>your</strong> learning journey,
+and as such, I expect students to take leadership in their own learning
+and to keep track of assignments and examination dates. I expect we will
+respectfully consider differing opinions and engage in constructive
+discourse. As such, I expect that everyone will help create a collegial
+environment where all students feel welcome and their rights to learn
+are respected. Please refer to the <a
+href="http://catalog.pomona.edu/content.php?catoid=38&amp;navoid=7668">Pomona
+College Student Code</a> for official policy.</p>
+</div>
+<div id="what-you-can-expect-from-me" class="section level3">
+<h3>What you can expect from me</h3>
+<p>I will strive to provide an equitable and inclusive learning
+environment. My overarching goal is to help you succeed in your
+exploration of conservation. To that end, you can expect me to be
+responsive to your concerns about course content, delivery style, and
+suggestions on how I can improve this course.</p>
+<p>A key component of my role as an instructor is office hours. During
+office hours, I am available to help you work through any problems,
+questions, or thoughts you have about the course. I am also more than
+happy to chat about broader questions such as career paths in
+conservation, next steps after Pomona College/the Claremont Colleges, or
+other topics of interest to you.</p>
+</div>
+</div>
+<div id="general-course-policies" class="section level2">
+<h2>General course policies</h2>
+<p><em>Office hours, email, and class Slack channel</em>: During office
+hours, I am available to help you work through any problems, questions,
+or thoughts you have about the course.</p>
+<p>I have email boundaries and I encourage you to find your own. Mine
+include not answering emails after 6pm, or on weekends or holidays.
+Finally, I request that emails only be used for interactions that are
+truly one-on-one (e.g. requesting extensions to assignments or
+accommodations); in general, to help create an atmosphere of
+transparency and group learning, I request that <strong>questions about
+content and assignments be directed to the #bio108 Slack
+channel</strong> in the Pomona College Division-II workspace.</p>
+<p><em>Learning diversity &amp; accommodations</em>: Pomona College
+welcomes and accommodates students with disabilities. As your
+instructor, I care about you and your growth as an environmental
+scholar. If you encounter obstacles to your success, please let me know
+immediately so that we can work together to identify ways to overcome
+any limitations of current course design. If you feel you need a
+reasonable accommodation to participate in this class, complete course
+requirements, or benefit from the College’s programs or services, you
+are also welcome to contact the student accessibility resource office at
+your College to begin this conversation or to establish accommodations
+for this or other courses.</p>
+<p>Below is a list of the relevant accessibility resource offices at
+each of the Colleges:</p>
+<ol style="list-style-type: decimal">
+<li><a
+href="https://www.cmc.edu/dean-of-students/accessibility-services">Claremont
+McKenna College (CMC) Accessibility Services</a></li>
+<li><a
+href="https://www.hmc.edu/student-life/disability-resources/">Harvey
+Mudd College (HMC) Disability Resources Office</a></li>
+<li><a
+href="https://www.pitzer.edu/student-life/academic-support-services/">Pitzer
+College (PZ) Academic Support Services</a></li>
+<li><a
+href="https://www.pomona.edu/accessibility/student-accessibility">Pomona
+College (POM) Student Accessibility Resources and Services
+Office</a></li>
+<li><a
+href="https://www.scrippscollege.edu/academics/students-with-disabilities">Scripps
+College (SC) Accommodations for Students with Disabilities</a></li>
+<li><a href="https://services.claremont.edu/sdrc/">The 7 College (7C)
+Student Disability Resource Center</a> and <a
+href="mailto:SDRC@claremont.edu">7C Student Disability Resource Center
+email</a></li>
+</ol>
+<p><em>Writing center and student support services</em>: I urge all
+students to make use of your home campus’ Writing Center and other
+student support services. A list of relevant resources in included
+below. For example, the Writing Center is a great resource to workshop
+and improve your writing whether that is for classwork, for public
+consumption (e.g. op-eds), graduate school or funding applications, or
+any other domain.</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://www.cmc.edu/writing">CMC Center for Writing and
+Public Discourse</a></li>
+<li><a href="https://www.hmc.edu/learning-programs/writing-center/">HMC
+Writing Center</a></li>
+<li><a href="https://www.pomona.edu/administration/writing-center">POM
+Writing Center</a></li>
+<li><a href="https://www.pitzer.edu/writing-center/">PZ Writing
+Center</a></li>
+<li><a
+href="https://www.scrippscollege.edu/departments/writing-program/writing-center">SC
+Writing Center</a></li>
+</ol>
+<p><em>Late assignments</em>: When assignments are handed in late
+without prior notice, I reserve the right to apply a grade deduction
+penalty (~1 grade reduction for each day late; 4 or more days late
+translates to a failing grade).</p>
+<p><em>Academic integrity</em>: Academic honesty is a core value of
+Pomona College and the Claremont Colleges. Plagiarism undermines
+academic integrity and is a threat to communal ethics. I will assign
+plagiarized assignments a failing grade and will report any instance of
+plagiarism to the College.</p>
+</div>
+<div id="course-schedule" class="section level2">
+<h2>Course Schedule</h2>
+<p>Please note that this schedule is subject to change; this syllabus is
+very much a <em>living document</em> that will change to reflect the
+unique conditions of this semester. I reserve the right to exercise some
+flexibility in scheduling, usually in favor of giving more time to
+students.</p>
+<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
+<thead>
+<tr>
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Week
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Topic
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Resources
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Assignments
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+1
+</td>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+Introduction
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+<a
+href="https://colab.research.google.com/drive/1J16eXJKVVGHI2iDTGOr_PQGju16QZFcH?usp=sharing">Week
+1 Notebook</a>
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+Read syllabus, HW1
+</td>
+</tr>
+<tr>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+2
+</td>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+Data manipulation and plotting
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+<a
+href="https://colab.research.google.com/drive/14l3Bj6U__gmmCfenqvnmO7z_qvBf-aRM?usp=sharing">Week
+2-Pandas</a>; <a
+href="https://colab.research.google.com/drive/1qrFpwpA4GFFshFafz5SdSPTfXl2kKcc_?usp=sharing">Week
+2-Plotting</a>
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+HW2
+</td>
+</tr>
+<tr>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+3
+</td>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+Time series data
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+<a
+href="https://colab.research.google.com/drive/1OrzmIoaIBORkPCgumPwMQjHtM8SPx1iC?usp=sharing">Week3-TS</a>;
+<a
+href="https://colab.research.google.com/drive/1JBav5XVqYGGjhDbNAY7oZR6V8jtM86n5?usp=sharing">Week3-TSds</a>
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+HW3
+</td>
+</tr>
+<tr>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+4
+</td>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+GIS systems
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+<a
+href="https://www.esri.com/training/catalog/5d816c0255cf937306d2d3ef/arcgis-online-basics/">ArcGIS
+online tutorial</a>; <a
+href="https://py.geocompx.org/01-spatial-data">Geocomputation in Python
+Chapter 1</a>
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+HW4
+</td>
+</tr>
+<tr>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+5
+</td>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+Spatial data in Python: shapefiles and rasters
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+Please read <a
+href="https://py.geocompx.org/01-spatial-data">Geocomputation in Python
+Chapter 1</a> before this week begins!
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+HW5
+</td>
+</tr>
+<tr>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+6
+</td>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+Remotely sensed data in Python (land cover and satellite imagery)
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+Week6-RS
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+HW6
+</td>
+</tr>
+<tr>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+7
+</td>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+Scraping data in Python: OpenAlex and eBird
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+Week7-Scraping
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+HW7
+</td>
+</tr>
+<tr>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+8
+</td>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+Spring break
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+Begin thinking of a topic for the data workshop
+</td>
+</tr>
+<tr>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+9
+</td>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+Processing text data (NLP in Python)
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+Week9-NLP
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+HW9
+</td>
+</tr>
+<tr>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+10
+</td>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+Machine learning for conservation
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+Week10-ML
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+HW10
+</td>
+</tr>
+<tr>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+11
+</td>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+Big Data in conservation
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+Special guest speakers
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+HW11
+</td>
+</tr>
+<tr>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+12
+</td>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+Drafting workshops
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+Selecting a topic and method, drafting workshop
+</td>
+</tr>
+<tr>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+13
+</td>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+Drafting workshops
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+Peer review
+</td>
+</tr>
+<tr>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+14
+</td>
+<td style="border-bottom: solid 0.5px; text-align: left;">
+Student workshops
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+</td>
+<td style="border-bottom: solid 0.5px; text-align: center;">
+Seniors must complete by this week
+</td>
+</tr>
+<tr>
+<td style="border-bottom: 2px solid grey; text-align: left;">
+15
+</td>
+<td style="border-bottom: 2px solid grey; text-align: left;">
+Student workshops
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

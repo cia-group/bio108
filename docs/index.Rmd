@@ -1,0 +1,151 @@
+---
+title: "Data science for conservation syllabus"
+author: ""
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+POMblue <- "#0057B7"
+options(tinytex.verbose = TRUE)
+```
+
+# Overview
+
+This course presents data science techniques for analyzing and deriving insights about biodiversity conservation. With 10-50% of species threatened by human activities, novel computational techniques can unlock new understanding of environmental challenges from digital data, encompassing websites, satellite data, or time series data. In this course, students will learn techniques such as geospatial analysis, natural language processing, and machine learning. 
+
+Students will learn how to effectively collect, clean, and extract meaning from unstructured data. Prior programming and statistical analysis experience is strongly encouraged but not required. Through coding assignments and a capstone project, students will build proficiency using open source libraries to wrangle, analyze, visualize, and interpret conservation-related datasets. By the end of the course, a successful learner will have hands-on experience with data science methods, and will have insight on how to connect these with biodiversity and sustainability research, policy, planning, and advocacy.
+
+* *Data management, analysis, and visualization*: You will develop skills in data science using an open-source programming language (Python). I do not assume any prior experience with programming. However, I expect that students in this class will have an appetite to learn and to continuously self-improve.
+* *Reading*: You will relate the methodologies you are learning to new research in conservation science. You will also demonstrate understanding of how this research communicates new information in ecology and/or conservation.
+* *Communication and Presentation*: In this course, you will learn through individual work and small group conversations. You will also develop your communication and presentation skills through the creation of a coding tutorial. You will also enhance your communication skills through peer review of one another's tutorials. 
+* *Learning through teaching*: Teaching is one of the best ways to consolidate knowledge and to see gaps in one's knowledge. Through course assignments, group conversations, and the capstone tutorial, you will learn by stepping into the role of a teacher.
+
+## Learning outcomes
+
+By the end of the course, a successful learner will be able to:
+
+1. ingest and process unstructured environmental data;
+2. identify how to use data science techniques to answer a scientific question;
+3. evaluate different strategies to derive insights from data to address contemporary conservation issues;
+4. discuss the use of data science in generating actionable information for conservation and demonstrate mastery of data science techniques through a live-coding workshop.
+
+## General information
+
+**Location**: Seaver South Computer Lab (Room 227)
+
+**Schedule**: Mondays and Wednesdays, 2:45-4pm
+
+**Office Hours**: My regularly scheduled office hours will be *TBD* in my office (Seaver South 108).
+
+**Prerequisites**: Bio 41E (Intro Ecol & Evolutionary Bio w/Lab) or instructor permission
+
+**Readings**: This course will use weekly notebook tutorials and will ask students to navigate to these *Society of Conservation Biology* journals to find new research (published within the last 5 years):
+
+* *Conservation Letters*
+* *Conservation Biology*
+* *Conservation Science and Practice*
+* If necessary, learners can expand to this non-society conservation journal: *Biological Conservation*
+* Students can also use these *Ecological Society of America* journals:
+    + *Ecology*
+    + *Ecological Applications*
+    + *Frontiers in Ecology and the Environment* (**note**: this is *not* the for-profit "*Frontiers In*" family)
+
+**AI policy**: I expect that students will present their own original work in every assignment in this class. However, students may find generative AI to be helpful in deepening their understanding of some of the methods we will be exploring. I expect that if students use generative AI, they will **always**:
+
+* Cite and attribute assistance from a generative AI model;
+    + If students use generative AI without attribution, this will constitute plagiarism.
+* Students will develop their own preliminary outline and draft code and will not unthinkingly copy AI-generated code;
+* Students will only use generative AI to answer questions about:
+    + Error, warning, or other messages (e.g. "Why is this command not working? What does this error message indicate?");
+    + Commentary to clarify code or methods presented in the class (e.g. "What is this function doing? Please break it down step by step and add human-readable comments.").
+* Students **must** disable the generative AI suggestions in Google CoLab.
+* I expect that students **will not** use generative AI to 1) write written responses or 2) write code.
+    + To that end, the student-led workshops at the end of the semester will expect that you have mastery over approaches in the course and will be comfortable live-coding *without AI assistance*.
+    
+In the longer term, generative AI is extremely expensive for these companies to run and has a substantial environmental and power demand footprint. It is also unclear if companies providing these services will be able to procure enough electricity to be able to meet all consumer demand for this service. *Therefore, relying on generative AI* puts you at the mercy of large companies that have no accountability to the public, and can harm your growth for near-term convenience that becomes a long-term liability when access to these tools disappears (e.g. companies decide they are a money pit and cut them as a service--see [Google Graveyard](https://killedbygoogle.com/) for some examples) or is only accessible behind prohibitive paywalls (e.g. your organization must subscribe and pay 5-6 figures USD for some recurring subscription).
+
+**Digital ethics**: One of the tools we will use from time to time in this course is Zoom. To facilitate access, I will typically record Zoom meetings. I will inform students when recordings are in progress. I expect that students in my class will respect one another and my privacy. To that end, students will not record any other member of the class--including the instructor--without obtaining their consent in advance. Students will also not share information about other members of this course in any type of public fora, such as social media. As the instructor, I own the copyright to my instructional materials. These materials cannot be distributed in whole or in part to any person or entity other than other members of the current class without my prior written consent.
+
+## Course assessment
+			
+* Weekly homework assignments: 100 points
+* Workshop draft: 50 points
+* Peer review of the workshop tutorial: 25 points
+* Final workshop: 100 points
+* Participation: 150 points
+
+Participation is highly important for student success in this course. To that end, I reserve the option to assign a failing grade if students have *three* or more unexcused absences. Students can have *two* absences excused with no questions.
+
+## Mutual expectations
+
+### What I expect from you
+
+I welcome individuals of all ages, backgrounds, beliefs, ethnicities, genders, gender identities, gender expressions, national origins, religious affiliations, sexual orientations, ability - and other visible and non-visible differences. As an instructor, I strongly emphasize student agency; this class is **your** learning journey, and as such, I expect students to take leadership in their own learning and to keep track of assignments and examination dates. I expect we will respectfully consider differing opinions and engage in constructive discourse. As such, I expect that everyone will help create a collegial environment where all students feel welcome and their rights to learn are respected. Please refer to the [Pomona College Student Code](http://catalog.pomona.edu/content.php?catoid=38&navoid=7668) for official policy.
+
+### What you can expect from me
+
+I will strive to provide an equitable and inclusive learning environment. My overarching goal is to help you succeed in your exploration of conservation. To that end, you can expect me to be responsive to your concerns about course content, delivery style, and suggestions on how I can improve this course. 
+
+A key component of my role as an instructor is office hours. During office hours, I am available to help you work through any problems, questions, or thoughts you have about the course. I am also more than happy to chat about broader questions such as career paths in conservation, next steps after Pomona College/the Claremont Colleges, or other topics of interest to you.
+
+## General course policies
+
+*Office hours, email, and class Slack channel*: During office hours, I am available to help you work through any problems, questions, or thoughts you have about the course.
+
+I have email boundaries and I encourage you to find your own. Mine include not answering emails after 6pm, or on weekends or holidays. Finally, I request that emails only be used for interactions that are truly one-on-one (e.g. requesting extensions to assignments or accommodations); in general, to help create an atmosphere of transparency and group learning, I request that **questions about content and assignments be directed to the #bio108 Slack channel** in the Pomona College Division-II workspace.
+
+*Learning diversity & accommodations*: Pomona College welcomes and accommodates students with disabilities. As your instructor, I care about you and your growth as an environmental scholar. If you encounter obstacles to your success, please let me know immediately so that we can work together to identify ways to overcome any limitations of current course design. If you feel you need a reasonable accommodation to participate in this class, complete course requirements, or benefit from the College’s programs or services, you are also welcome to contact the student accessibility resource office at your College to begin this conversation or to establish accommodations for this or other courses.
+
+Below is a list of the relevant accessibility resource offices at each of the Colleges:
+
+1. [Claremont McKenna College (CMC) Accessibility Services](https://www.cmc.edu/dean-of-students/accessibility-services)
+2. [Harvey Mudd College (HMC) Disability Resources Office](https://www.hmc.edu/student-life/disability-resources/)
+3. [Pitzer College (PZ) Academic Support Services](https://www.pitzer.edu/student-life/academic-support-services/)
+4. [Pomona College (POM) Student Accessibility Resources and Services Office](https://www.pomona.edu/accessibility/student-accessibility)
+5. [Scripps College (SC) Accommodations for Students with Disabilities](https://www.scrippscollege.edu/academics/students-with-disabilities)
+6. [The 7 College (7C) Student Disability Resource Center](https://services.claremont.edu/sdrc/) and [7C Student Disability Resource Center email](mailto:SDRC@claremont.edu)
+
+*Writing center and student support services*: I urge all students to make use of your home campus’ Writing Center and other student support services. A list of relevant resources in included below. For example, the Writing Center is a great resource to workshop and improve your writing whether that is for classwork, for public consumption (e.g. op-eds), graduate school or funding applications, or any other domain.
+
+1. [CMC Center for Writing and Public Discourse](https://www.cmc.edu/writing) 
+2. [HMC Writing Center](https://www.hmc.edu/learning-programs/writing-center/)
+3. [POM Writing Center](https://www.pomona.edu/administration/writing-center)
+4. [PZ Writing Center](https://www.pitzer.edu/writing-center/)
+5. [SC Writing Center](https://www.scrippscollege.edu/departments/writing-program/writing-center)
+
+*Late assignments*:  When assignments are handed in late without prior notice, I reserve the right to apply a grade deduction penalty (~1 grade reduction for each day late; 4 or more days late translates to a failing grade).
+
+*Academic integrity*: Academic honesty is a core value of Pomona College and the Claremont Colleges. Plagiarism undermines academic integrity and is a threat to communal ethics. I will assign plagiarized assignments a failing grade and will report any instance of plagiarism to the College.
+
+## Course Schedule
+
+Please note that this schedule is subject to change; this syllabus is very much a *living document* that will change to reflect the unique conditions of this semester. I reserve the right to exercise some flexibility in scheduling, usually in favor of giving more time to students.
+
+```{r, echo=F, warning=F, message=F}
+library(dplyr)
+library(googlesheets4)
+library(htmlTable)
+library(knitr)
+library(flextable)
+
+## Pull in Google sheet schedule
+schedDF <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1sj37b38VT_HJHM0BVFWji2z_vOm45KTq17QMPJyiO3g/edit?usp=sharing",sheet = "Schedule",col_types="cccc")
+
+## Hack-y workaround to do zebra banding color automagically (based on NA values)
+zebra_cols <- rep("none",dim(schedDF)[1])
+zebra_cols[which(is.na(schedDF$Topic))] <- "#adc2d8"
+
+#ft <- flextable(schedDF)
+#ft <- theme_vanilla(ft)
+#ft
+
+schedDF$Week[1] <- "1  "
+
+schedDF %>% 
+  addHtmlTableStyle(col.rgroup = zebra_cols,
+                    align = "llccc",
+                    css.cell = "border-bottom: solid 0.5px",
+                    css.cgroup=c("width: 1000px;","width: 100px;","width: 300px;","width: 100px;","width: 300px;")) %>% # doesn't make a difference! must be getting overridden by knitr.
+  htmlTable(rnames=FALSE) # can't figure out for now how to merge cells - whatever
+```
