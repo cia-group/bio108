@@ -1,7 +1,7 @@
 name: "BIOL108"
 output_dir: "."
 navbar:
-  title: "Data science for conservation"
+  title: "Data science for conservation bio"
   left:
     - text: "Syllabus"
       icon: fa-home

@@ -1,5 +1,5 @@
 ---
-title: "Data science for conservation syllabus"
+title: "Data science for conservation biology syllabus"
 author: ""
 date: "`r Sys.Date()`"
 output: html_document
@@ -40,16 +40,7 @@ By the end of the course, a successful learner will be able to:
 
 **Prerequisites**: Bio 41E (Intro Ecol & Evolutionary Bio w/Lab) or instructor permission
 
-**Readings**: This course will use weekly notebook tutorials and will ask students to navigate to these *Society of Conservation Biology* journals to find new research (published within the last 5 years):
-
-* *Conservation Letters*
-* *Conservation Biology*
-* *Conservation Science and Practice*
-* If necessary, learners can expand to this non-society conservation journal: *Biological Conservation*
-* Students can also use these *Ecological Society of America* journals:
-    + *Ecology*
-    + *Ecological Applications*
-    + *Frontiers in Ecology and the Environment* (**note**: this is *not* the for-profit "*Frontiers In*" family)
+**Readings**: This course will use weekly notebook tutorials and will ask students to navigate to readings which will apply what we are learning in a "real world" context.
 
 **AI policy**: I expect that students will present their own original work in every assignment in this class. However, students may find generative AI to be helpful in deepening their understanding of some of the methods we will be exploring. I expect that if students use generative AI, they will **always**:
 
